@@ -44,15 +44,19 @@ body, html {
     }
   }
 
-  .puppyRanking {
-    display: flex;
-    flex-direction: row;
-    margin-top: 40px;
-    .pup {
-      min-width: 100px;
-      width: 100px;
-      height: 100px;
-      background-size: cover !important;
+  .puppyRankingContainer {
+    width: 100%;
+    overflow: auto;
+    .puppyRanking {
+      display: flex;
+      flex-direction: row;
+      margin-top: 40px;
+      .pup {
+        min-width: 100px;
+        width: 100px;
+        height: 100px;
+        background-size: cover !important;
+      }
     }
   }
 
@@ -60,3 +64,8 @@ body, html {
 
   }
 }
+
+
+
+
+
