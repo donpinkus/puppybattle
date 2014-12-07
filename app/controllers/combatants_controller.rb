@@ -28,7 +28,7 @@ class CombatantsController < ApplicationController
 
     respond_to do |format|
       if @combatant.save
-        format.html { redirect_to @combatant, notice: 'Combatant was successfully created.' }
+        format.html { redirect_to new_combatant_path, notice: 'Combatant was successfully created.' }
         format.json { render :show, status: :created, location: @combatant }
       else
         format.html { render :new }

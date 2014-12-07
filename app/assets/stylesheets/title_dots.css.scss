@@ -5,8 +5,7 @@ body {
     linear-gradient( 90deg,
       rgba(255,255,255,0) 50%,
       rgba(255,255,255,.4) 50%);
-  background-size: .12em 100%;
-  font: 19em/1 Lobster, Arial;
+  background-size: 33px 100%;
 }
 
 .text--line {
@@ -18,7 +17,8 @@ body {
 }
 
 svg {
-  margin: 40px auto 20px;
+  font: 23em Lobster, Arial;
+  margin: 20px auto 0px;
   width: 500px;
   display: block;
 }
