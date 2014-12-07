@@ -1,17 +1,13 @@
 <div class="theArena">
   <%= render "puppy_battle_title" %>
 
-<!--   <div class="showDown">
-    <div class="combatant">
-      <%= image_tag Combatant.first.url, height: 500 %>
-    </div>
-    <div class="combatant">
-      <%= image_tag Combatant.second.url, height: 500 %>
-    </div>
+  <div class="showDown">
+    <div class="combatant c1" style="background: url(<%= Combatant.first.url %>) center center"></div>
+    <div class="combatant c2" style="background: url(<%= Combatant.second.url %>) center center"></div>
   </div>
 
   <nav class="puppyRanking">
-  </nav> -->
+  </nav>
 
 <!--   <%= link_to 'Submit a new puppy!', new_combatant_path, class: "newCombatantButton" %> -->
 </div>
