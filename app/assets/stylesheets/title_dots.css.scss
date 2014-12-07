@@ -1,0 +1,52 @@
+@import url(http://fonts.googleapis.com/css?family=Lobster&subset=latin,cyrillic);
+
+body {
+  background: hsl(200,70,70)
+    linear-gradient( 90deg,
+      rgba(255,255,255,0) 50%,
+      rgba(255,255,255,.4) 50%);
+  background-size: .12em 100%;
+  font: 19em/1 Lobster, Arial;
+}
+
+.text--line {
+  font-size: .3em;
+}
+
+.text--line2 {
+  font-size: .3em;
+}
+
+svg {
+  margin: 40px auto 20px;
+  width: 500px;
+  display: block;
+}
+
+.text-copy {
+  fill: none;
+  stroke: white;
+  stroke-width: 10px;
+}
+
+.text-copy--shadow {
+  fill: rgba(0,0,0,.25);
+  transform: translate(0, .04em);
+}
+
+.r-fill {
+  fill: url(#p-dottes);
+  transform-origin: 100px 30px;
+  animation: rotate 10s linear infinite;
+}
+
+/* Fix for firefox */
+.r-fill--color {
+  fill: hsl(10,100%,55%);
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}

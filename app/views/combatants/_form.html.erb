@@ -1,0 +1,25 @@
+<%= form_for(@combatant) do |f| %>
+  <% if @combatant.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@combatant.errors.count, "error") %> prohibited this combatant from being saved:</h2>
+
+      <ul>
+      <% @combatant.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :caption %><br>
+    <%= f.text_field :caption %>
+  </div>
+  <div class="field">
+    <%= f.label :url %><br>
+    <%= f.text_field :url %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
