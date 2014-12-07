@@ -7,10 +7,14 @@
 body, html {
   padding: 0;
   margin: 0;
+  height: 100%;
 }
 
 
 .theArena {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   #puppyBattleImage {
     margin: 20px auto 20px;
     width: 540px;
@@ -18,17 +22,22 @@ body, html {
   }
 
   .showDown {
-    margin-top: 20px;
+    flex: 1;
     text-align: center;
+    display: flex;
+    flex-direction: row;
     .combatant {
       cursor: pointer;
-      height: 500px;
-      width: 500px;
+      flex: 1;
+      margin: 40px;
       background: gray;
       display: inline-block;
       border-radius: 5px;
       overflow: hidden;
       background-size: cover !important;
+      -webkit-box-shadow: 0 1px 16px hsla(0, 0%, 0%, 0.1);
+      -moz-box-shadow: 0 1px 16px rgba(0,0,0,.1);
+      box-shadow: 0 1px 16px hsla(0, 0%, 0%, 0.1);
       &:nth-child(1) {
         margin-right: 10px;
       }
@@ -36,7 +45,13 @@ body, html {
   }
 
   .puppyRanking {
-
+    display: flex;
+    flex-direction: row;
+    .pup {
+      width: 200px;
+      height: 200px;
+      background-size: cover !important;
+    }
   }
 
   .newCombatantButton {

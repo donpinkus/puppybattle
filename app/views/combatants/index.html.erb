@@ -6,8 +6,14 @@
     <div class="combatant c2" style="background: url(<%= Combatant.second.url %>) center center"></div>
   </div>
 
-  <nav class="puppyRanking">
-  </nav>
+  <div class="puppyRankingContainer">
+    <nav class="puppyRanking">
+      <% Combatant.all.each do |c| %>
+        <div class="pup"
+          style="background: url(<%= c.url %>) center center"></div>
+      <% end %>
+    </nav>
+  </div>
 
 <!--   <%= link_to 'Submit a new puppy!', new_combatant_path, class: "newCombatantButton" %> -->
 </div>
