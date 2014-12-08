@@ -2,8 +2,14 @@
   <%= render "puppy_battle_title" %>
 
   <div class="showDown">
-    <div class="combatant c1" style="background: url(<%= Combatant.first.url %>) center center"></div>
-    <div class="combatant c2" style="background: url(<%= Combatant.second.url %>) center center"></div>
+    <div class="combatant c1">
+      <div class="pupImage" style="background: url(<%= Combatant.first.url %>) center center"></div>
+      <div class="heartOverlay"></div>
+    </div>
+    <div class="combatant c2">
+      <div class="pupImage" style="background: url(<%= Combatant.second.url %>) center center"></div>
+      <div class="heartOverlay"></div>
+    </div>
   </div>
 
   <div class="puppyRankingContainer">

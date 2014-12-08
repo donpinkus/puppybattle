@@ -27,19 +27,37 @@ body, html {
     display: flex;
     flex-direction: row;
     .combatant {
+      position: relative;
       cursor: pointer;
       flex: 1;
+      flex-direction: column;
+      display: flex;
       margin: 40px;
       background: gray;
-      display: inline-block;
       border-radius: 5px;
       overflow: hidden;
-      background-size: cover !important;
       -webkit-box-shadow: 0 1px 16px hsla(0, 0%, 0%, 0.1);
       -moz-box-shadow: 0 1px 16px rgba(0,0,0,.1);
       box-shadow: 0 1px 16px hsla(0, 0%, 0%, 0.1);
       &:nth-child(1) {
         margin-right: 10px;
+      }
+      .pupImage {
+        flex: 1;
+        background-size: cover !important;
+      }
+      .heartOverlay {
+        background: url(/assets/heart.png) no-repeat center center;
+        background-size: contain;
+        position: absolute;
+        top: 20px;
+        bottom: 20px;
+        left: 20px;
+        right: 20px;
+        opacity: 0;
+      }
+      &:hover .heartOverlay {
+        opacity: 0.5;
       }
     }
   }
