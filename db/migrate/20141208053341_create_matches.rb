@@ -4,6 +4,7 @@ class CreateMatches < ActiveRecord::Migration
       t.integer :winner_id
       t.integer :loser_id
       t.integer :user_id
+      t.string :session
 
       t.timestamps
     end

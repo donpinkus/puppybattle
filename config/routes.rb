@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
   resources :matches
 
-  resources :votes
-
   resources :combatants
 
   # The priority is based upon order of creation: first created -> highest priority.

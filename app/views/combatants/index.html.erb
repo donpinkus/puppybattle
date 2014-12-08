@@ -2,11 +2,11 @@
   <%= render "puppy_battle_title" %>
 
   <div class="showDown">
-    <div class="combatant c1">
+    <div class="combatant c1" data-combatant-id="<%= @combatants.first.id %>">
       <div class="pupImage" style="background: url(<%= @combatants.first.url %>) center center"></div>
       <div class="heartOverlay"></div>
     </div>
-    <div class="combatant c2">
+    <div class="combatant c2" data-combatant-id="<%= @combatants.second.id %>">
       <div class="pupImage" style="background: url(<%= @combatants.second.url %>) center center"></div>
       <div class="heartOverlay"></div>
     </div>

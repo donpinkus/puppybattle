@@ -26,14 +26,16 @@ class MatchesController < ApplicationController
   def create
     @match = Match.new(match_params)
 
-    respond_to do |format|
-      if @match.save
-        format.html { redirect_to @match, notice: 'Match was successfully created.' }
-        format.json { render :show, status: :created, location: @match }
-      else
-        format.html { render :new }
-        format.json { render json: @match.errors, status: :unprocessable_entity }
-      end
+    @match.session = request.session.id
+
+    if @match.save
+      # Get the next match.
+      pup_1 = Combatant.where.not(id: Match.pluck(:winner_id,:loser_id).flatten.uniq).first
+      pup_2 = Combatant.where.not(id: Match.pluck(:winner_id,:loser_id).flatten.uniq).second
+
+      render json: { status: :created, next_match: {combatant_1: pup_1, combatant_2: pup_2} }
+    else
+      render json: @match.errors, status: :unprocessable_entity
     end
   end
 

@@ -16,6 +16,8 @@ ActiveRecord::Schema.define(version: 20141208053341) do
   create_table "combatants", force: true do |t|
     t.string   "caption"
     t.string   "url"
+    t.integer  "user_id"
+    t.string   "session"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -24,6 +26,7 @@ ActiveRecord::Schema.define(version: 20141208053341) do
     t.integer  "winner_id"
     t.integer  "loser_id"
     t.integer  "user_id"
+    t.string   "session"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -1,3 +1,15 @@
+function updateCombatants(c1, c2){
+  console.log('updating combatants');
+  $('.c1').attr('data-combatant-id', c1["id"])
+    .find('.pupImage').attr('style', 'background: url("' + c1["url"] + '") center center');
+
+    console.log(c1["url"]);
+
+  $('.c2').attr('data-combatant-id', c2["id"])
+    .find('.pupImage').attr('style', 'background: url("' + c2["url"] + '") center center');
+}
+
+
 $(document).ready(function(){
   $('.combatant').click(function(){
     var $combatants = $('.combatant');
@@ -6,14 +18,15 @@ $(document).ready(function(){
 
     $.ajax({
       method: "POST",
-      url: "/votes",
+      url: "/matches",
       data: {
-        winner_id: winnderID,
-        loser_id: loserID
+        match: {
+          winner_id: winnerID,
+          loser_id: loserID
+        }
       }
     }).done(function(status){
-      console.log('got response');
-      console.log(status);
+      updateCombatants(status["next_match"]["combatant_1"], status["next_match"]["combatant_2"]);
     });
 
   });
