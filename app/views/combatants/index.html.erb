@@ -3,18 +3,18 @@
 
   <div class="showDown">
     <div class="combatant c1">
-      <div class="pupImage" style="background: url(<%= Combatant.first.url %>) center center"></div>
+      <div class="pupImage" style="background: url(<%= @combatants.first.url %>) center center"></div>
       <div class="heartOverlay"></div>
     </div>
     <div class="combatant c2">
-      <div class="pupImage" style="background: url(<%= Combatant.second.url %>) center center"></div>
+      <div class="pupImage" style="background: url(<%= @combatants.second.url %>) center center"></div>
       <div class="heartOverlay"></div>
     </div>
   </div>
 
   <div class="puppyRankingContainer">
     <nav class="puppyRanking">
-      <% Combatant.all.each do |c| %>
+      <% @combatants.each do |c| %>
         <div class="pup"
           style="background: url(<%= c.url %>) center center"></div>
       <% end %>

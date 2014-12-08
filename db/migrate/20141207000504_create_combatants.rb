@@ -4,9 +4,6 @@ class CreateCombatants < ActiveRecord::Migration
       t.string :caption
       t.string :url
 
-      t.integer :votes_count, default: 0
-      t.integer :votes_count_override
-
       t.timestamps
     end
 

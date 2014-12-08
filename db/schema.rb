@@ -11,25 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141207000536) do
+ActiveRecord::Schema.define(version: 20141208053341) do
 
   create_table "combatants", force: true do |t|
     t.string   "caption"
     t.string   "url"
-    t.integer  "votes_count",          default: 0
-    t.integer  "votes_count_override"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "votes", force: true do |t|
+  create_table "matches", force: true do |t|
+    t.integer  "winner_id"
+    t.integer  "loser_id"
     t.integer  "user_id"
-    t.integer  "combatant_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  add_index "votes", ["combatant_id"], name: "index_votes_on_combatant_id"
-  add_index "votes", ["user_id"], name: "index_votes_on_user_id"
 
 end
