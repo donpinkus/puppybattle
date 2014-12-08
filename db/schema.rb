@@ -16,6 +16,8 @@ ActiveRecord::Schema.define(version: 20141207000536) do
   create_table "combatants", force: true do |t|
     t.string   "caption"
     t.string   "url"
+    t.integer  "votes_count",          default: 0
+    t.integer  "votes_count_override"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
