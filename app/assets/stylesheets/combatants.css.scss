@@ -42,6 +42,9 @@ body, html {
       &:nth-child(1) {
         margin-right: 10px;
       }
+      &:hover {
+        box-shadow: 0 0px 30px hsl(0, 72%, 59%)
+      }
       .pupImage {
         flex: 1;
         background-size: cover !important;
@@ -57,7 +60,7 @@ body, html {
         opacity: 0;
       }
       &:hover .heartOverlay {
-        opacity: 0.5;
+        // opacity: 0.5;
       }
     }
   }
@@ -80,6 +83,15 @@ body, html {
 
   .newCombatantButton {
 
+  }
+}
+
+@keyframes fadecycle {
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
 
