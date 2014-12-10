@@ -30,8 +30,8 @@ class MatchesController < ApplicationController
 
     if @match.save
       # Get the next match.
-      pup_1 = Combatant.where.not(id: Match.pluck(:winner_id,:loser_id).flatten.uniq).first
-      pup_2 = Combatant.where.not(id: Match.pluck(:winner_id,:loser_id).flatten.uniq).second
+      pup_1 = Combatant.where.not(id: Match.where(session: request.session.id).pluck(:winner_id,:loser_id).flatten.uniq).first
+      pup_2 = Combatant.where.not(id: Match.where(session: request.session.id).pluck(:winner_id,:loser_id).flatten.uniq).second
 
       render json: { status: :created, next_match: {combatant_1: pup_1, combatant_2: pup_2} }
     else
